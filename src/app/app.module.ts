@@ -7,12 +7,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-
-
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrdersService } from './orders.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -29,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
   ],
-  providers: [],
+  providers: [OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

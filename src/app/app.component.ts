@@ -3,6 +3,10 @@ import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { OrdersService } from './orders.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +29,29 @@ export class AppComponent implements AfterViewInit {
     setTimeout(() => this.dataSource.paginator = this.paginator);
     console.log("Tabela"+ this.dataSource);
   }
+
+  orders: any;
+
+  constructor(private ordersService: OrdersService) {}
+
+  ngOnInit(){
+    this.getOrders();
+  }
+
+  getOrders(){
+    this.ordersService.getOrders().subscribe((data)=>{this.orders=data
+    console.log(data)})
+
 }
+}
+
+
+
+
+
+
+
+
 
 export interface PeriodicElement {
   name: string;
