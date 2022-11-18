@@ -60,3 +60,17 @@
     box-shadow: none !important;
   }
 
+  .mat-header-cell{
+    font-size: 15px;
+  }
+
+  .header1{
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  .header2{
+    color: gray;
+    font-size: small;
+  }
+
