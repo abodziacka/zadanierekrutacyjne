@@ -64,8 +64,8 @@ export class AppComponent implements AfterViewInit {
 
   openDialog(id: number){
     this.dialog.open(DialogAppComponent, {
-      width: '500px',
-      height: '600px',
+      width: '700px',
+      height: '800px',
       data: {id: id},
     });
   }

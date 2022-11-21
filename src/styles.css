@@ -15,6 +15,7 @@ body { margin: 0; font-family: Verdana, sans-serif }
 
 .mat-dialog-container{
   border-radius: 20px !important;
+  padding: 50px !important;
 }
 
 .cdk-overlay-backdrop.cdk-overlay-backdrop-showing{

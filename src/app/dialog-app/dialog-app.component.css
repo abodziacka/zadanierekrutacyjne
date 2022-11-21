@@ -1,9 +1,12 @@
-.button1{
+.backButton{
   margin: 0 auto;
-  width: 40%;
+  display: block;
+  margin-top: 40%;
+  justify-content: center;
+  width: 150px;
   height: 25px;
   background-color: rgb(180, 129, 136);
-  border-width:0;
+  border-width:0px;
   border-radius: 5px;
   color: aliceblue;
   padding: 0;
@@ -14,4 +17,46 @@
 
 .mat-dialog-container{
   border-radius: 20px !important;
+  padding: 30px !important;
+}
+
+.table{
+  padding: 20px;
+
+}
+.table1{
+  margin-top: 5%;
+}
+.dialogHeader{
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 40px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+  margin-top: 4%;
+  margin-bottom: 5%;
+}
+.border{
+  height: 2px;
+  border-bottom-style: outset
+
+}
+
+.dialogHeader2{
+  font-weight: bold;
+  font-size: 20px;
+  width: 30%;
+}
+
+.details{
+  padding-left: 50px;
+  width: 70%;
+
+}
+
+.row{
+  padding-top: 5%;
+  display: flex;
 }

@@ -1,19 +1,29 @@
 
- <h1 mat-dialog-title style="text-align: center;">Szczegóły zamówienia</h1>
- <table>
-  <tr>
-     <td>Koszt zamówienia</td> <td>{{order.total}}</td>
-  </tr>
-  <tr>
-     <td>Lista produktów</td> <td>{{order.line_items | json}}</td>
-  </tr>
-  <tr>
-     <td>Dane do dostawy</td><td> {{order.cart_tax}}</td>
-  </tr>
-  <tr>
-    <td>Dane płatnika</td> <td>8</td>
- </tr>
-</table>
+ <h1 class="dialogHeader">Szczegóły zamówienia</h1>
+ <div class="border"></div>
+ <div class="table1">
+  <table>
+    <tr class="row">
+       <td class="dialogHeader2">Koszt zamówienia</td> <td class="details">{{order.total}} {{order.currency}}</td>
+    </tr>
+    <tr class="row">
+       <td class="dialogHeader2">Lista produktów</td> <td class="details"></td>
+    </tr>
+    <tr class="row">
+       <td class="dialogHeader2">Dane do dostawy</td><td class="details"> {{order.shipping | json}}</td>
+    </tr>
+    <tr class="row">
+      <td class="dialogHeader2">Dane płatnika</td> <td class="details">8</td>
+   </tr>
+
+  </table>
+ </div>
+
+ <div>
+  <button (click)="backClick()" class="backButton"> Powrót </button>
+ </div>
+
+
 
 
 
