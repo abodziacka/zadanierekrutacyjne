@@ -41,13 +41,13 @@
     <!-- Position Column -->
     <ng-container matColumnDef="order">
       <th mat-header-cell *matHeaderCellDef> Zamówienie </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell [width]="'12%'" *matCellDef="let element">
         <div style="margin-top:3%">
           <div class="header1" style="cursor: pointer;" (click)="openDialog(element.id)">  #{{element.id}} </div>
           <div> <mat-card>
             <mat-card-content> {{element.status}} </mat-card-content>
           </mat-card></div>
-          <div class="whichOrder" ><span class="material-icons shopIcon">shopping_basket</span> {{getProducts(element) | json}}</div>
+          <div class="whichOrder" ><span class="material-icons shopIcon">shopping_basket</span> {{gerFirstProduct(element)}}</div>
         </div>
       </td>
     </ng-container>
@@ -55,7 +55,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Data </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell [width]="'5%'" *matCellDef="let element">
         <div style="font-size: 15px; font-weight: 450;"> {{element.date_created | slice:0:10}}</div>
         <div class="header2" style="color: grey">{{element.date_created | slice:11:16}}</div>
       </td>
@@ -64,7 +64,7 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef> Cena </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell [width]="'10%'" *matCellDef="let element">
         <div style="font-size: 15px; font-weight: 450; text-align: center;"> {{element.total}} {{element.currency}}</div>
         <div class="header2" style="text-align: center;"> <u>Faktura nie wiem jaka</u></div>
       </td>
@@ -73,7 +73,7 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="customer">
       <th mat-header-cell *matHeaderCellDef> Klient </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell [width]="'20%'" *matCellDef="let element">
         <div class="header1">{{element.billing.first_name}} {{element.billing.last_name}} </div>
         <div class="header2" style="margin-bottom: 0;"> {{element.billing.email}} <span *ngIf="element.billing.email" class="material-icons">content_copy</span></div>
         <div class="header2" style="margin-top: 0;"> {{element.billing.phone}} <span *ngIf="element.billing.phone" class="material-icons">content_copy</span></div>

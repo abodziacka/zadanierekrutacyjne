@@ -23,7 +23,7 @@ import { DialogAppComponent } from './dialog-app/dialog-app.component';
 export class AppComponent implements AfterViewInit {
   title = 'zadanierekrutacyjne';
   orders: any;
-  dataSource = new MatTableDataSource<any>();
+  dataSource = new MatTableDataSource<Orders>();
 
   displayedColumns: string[] = ['order', 'date', 'price', 'customer'];
 
@@ -40,15 +40,8 @@ export class AppComponent implements AfterViewInit {
     console.log(this.dataSource);})
   }
 
-  getProducts(element: Orders) {
-    //let mapaProduktow :  Map<number, {name: string, quantity: number}> = new Map();
-    return element.line_items.forEach(item => {
-       item.name + 'x' + item.quantity;
-    });
-    // return  Array.from(mapaProduktow).map(item => {
-    //   console.log(item);
-    //   return item[1].name +" x " + item[1].quantity
-    // });
+  gerFirstProduct(element: Orders) {
+    return element.line_items[0].name + ' x ' + element.line_items[0].quantity + "...";
   }
 
 

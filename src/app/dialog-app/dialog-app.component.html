@@ -1,19 +1,31 @@
 
- <h1 class="dialogHeader">Szczegóły zamówienia</h1>
+ <h1 class="dialogHeader" >Szczegóły zamówienia #{{order?.id}}</h1>
  <div class="border"></div>
- <div class="table1">
+ <div class="table1" *ngIf="order">
   <table>
     <tr class="row">
        <td class="dialogHeader2">Koszt zamówienia</td> <td class="details">{{order.total}} {{order.currency}}</td>
     </tr>
     <tr class="row">
-       <td class="dialogHeader2">Lista produktów</td> <td class="details"></td>
+       <td class="dialogHeader2">Lista produktów</td> <td class="details">
+        <div *ngFor="let element of order.line_items">
+          {{element.name}} x {{element.quantity}}
+        </div></td>
     </tr>
     <tr class="row">
-       <td class="dialogHeader2">Dane do dostawy</td><td class="details"> {{order.shipping | json}}</td>
+       <td class="dialogHeader2">Dane do dostawy</td><td class="details" *ngIf="order.shipping">  {{order.shipping.first_name}} {{order.shipping.last_name}} <br/>
+        {{order.shipping.address_1}} {{order.shipping.address_2}} <br/>
+        {{order.shipping.postcode}} {{order.shipping.city}} <br/>
+        {{order.shipping.phone}}
+      </td>
     </tr>
     <tr class="row">
-      <td class="dialogHeader2">Dane płatnika</td> <td class="details">8</td>
+      <td class="dialogHeader2">Dane płatnika</td> <td class="details" *ngIf="order.billing">{{order.billing.first_name}} {{order.billing.last_name}} <br/>
+        {{order.billing.address_1}} {{order.billing.address_2}} <br/>
+        {{order.billing.postcode}} {{order.billing.city}} <br/>
+        {{order.billing.phone}} <br/>
+        {{order.billing.email}}
+      </td>
    </tr>
 
   </table>

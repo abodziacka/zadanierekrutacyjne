@@ -1,18 +1,26 @@
 .backButton{
   margin: 0 auto;
   display: block;
-  margin-top: 40%;
+  margin-top: 10%;
   justify-content: center;
   width: 150px;
-  height: 25px;
-  background-color: rgb(180, 129, 136);
+  height: 28px;
+  background-color: rgb(146, 102, 107);
   border-width:0px;
   border-radius: 5px;
-  color: aliceblue;
+  color: rgb(244, 239, 245);
   padding: 0;
-  font-size: medium;
-  font-weight: 200;
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-variant: normal;
   cursor: pointer;
+}
+
+.backButton:focus{
+  outline: none;
 }
 
 .mat-dialog-container{

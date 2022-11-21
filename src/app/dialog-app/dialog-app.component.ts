@@ -39,7 +39,8 @@ export class DialogAppComponent implements OnInit {
 
   }
 
-  getShippingDetails(element: Orders){
+  getProducts(element: Orders){
+    return element?.line_items[0].name;
     // return element.shipping;
     // return element.shipping.forEach(item=>{
     //   item.address_1;
