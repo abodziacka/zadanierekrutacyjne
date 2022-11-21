@@ -41,12 +41,13 @@
   .pagination{
     width:50%;
     margin-top: 1.5%;
+
+    justify-content: flex-start !important;
   }
 
   .mat-paginator-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start !important;
     min-height: 56px;
     padding: 0 8px;
     flex-wrap: wrap-reverse;
@@ -76,6 +77,10 @@
     margin: 1.5% 0;
   }
 
+  .material-icons{
+    font-size: 14px;
+  }
+
   .mat-card{
     width: 35%;
     background-color: rgb(80, 158, 80);
@@ -92,6 +97,13 @@
   margin: 6% 0 2% 4%;
   color: rgb(80, 158, 80);
   font-weight: bold;
-  font-size: medium ;
+  font-size: 20px ;
+
 }
 
+.shopIcon{
+  color: rgb(80, 150, 80);
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  font-size: 20px;
+}

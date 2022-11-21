@@ -4,5 +4,23 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Verdana, sans-serif }
 
 
+.mat-paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  padding: 0 8px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+}
 
+.mat-dialog-container{
+  border-radius: 20px !important;
+}
 
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing{
+  opacity: 10 !important;
+}
+
+.cdk-overlay-dark-backdrop{
+  background: rgba(0, 0, 0, 0.747);
+}

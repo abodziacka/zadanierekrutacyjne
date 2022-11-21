@@ -43,11 +43,11 @@
       <th mat-header-cell *matHeaderCellDef> Zamówienie </th>
       <td mat-cell *matCellDef="let element">
         <div style="margin-top:3%">
-          <div class="header1"> #{{element.id}}</div>
+          <div class="header1" style="cursor: pointer;" (click)="openDialog(element.id)">  #{{element.id}} </div>
           <div> <mat-card>
             <mat-card-content> {{element.status}} </mat-card-content>
           </mat-card></div>
-          <div class="whichOrder" >{{getProducts(element) | json}}</div>
+          <div class="whichOrder" ><span class="material-icons shopIcon">shopping_basket</span> {{getProducts(element) | json}}</div>
         </div>
       </td>
     </ng-container>
@@ -75,8 +75,8 @@
       <th mat-header-cell *matHeaderCellDef> Klient </th>
       <td mat-cell *matCellDef="let element">
         <div class="header1">{{element.billing.first_name}} {{element.billing.last_name}} </div>
-        <div class="header2" style="margin-bottom: 0;"> {{element.billing.email}}</div>
-        <div class="header2" style="margin-top: 0;"> {{element.billing.phone}} </div>
+        <div class="header2" style="margin-bottom: 0;"> {{element.billing.email}} <span *ngIf="element.billing.email" class="material-icons">content_copy</span></div>
+        <div class="header2" style="margin-top: 0;"> {{element.billing.phone}} <span *ngIf="element.billing.phone" class="material-icons">content_copy</span></div>
       </td>
     </ng-container>
 
@@ -85,8 +85,4 @@
   </table>
 
 </div>
-
-
-
-
 

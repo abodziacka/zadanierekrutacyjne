@@ -14,10 +14,13 @@ import { OrdersService } from './orders.service';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogAppComponent } from './dialog-app/dialog-app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogAppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatNativeDateModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
 
 
 

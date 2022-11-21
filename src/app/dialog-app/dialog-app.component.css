@@ -1,0 +1,17 @@
+.button1{
+  margin: 0 auto;
+  width: 40%;
+  height: 25px;
+  background-color: rgb(180, 129, 136);
+  border-width:0;
+  border-radius: 5px;
+  color: aliceblue;
+  padding: 0;
+  font-size: medium;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.mat-dialog-container{
+  border-radius: 20px !important;
+}
