@@ -27,27 +27,28 @@
   </div>
 
   <div class="pagination">
-     <mat-paginator [length]="1863"
-                [pageSize]="10"
+     <mat-paginator #paginator
+     [length]="10"
+                [pageSize]="5"
                 [pageSizeOptions]="[5, 10, 20, 100]"
                 aria-label="Select page">
   </mat-paginator>
   </div>
 </div>
-
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="orders">
+  <table mat-table [dataSource]="dataSource">
 
     <!-- Position Column -->
     <ng-container matColumnDef="order">
       <th mat-header-cell *matHeaderCellDef> Zamówienie </th>
       <td mat-cell *matCellDef="let element">
-        <div style="margin-top:2%">
+        <div style="margin-top:3%">
           <div class="header1"> #{{element.id}}</div>
-          <div> {{element.status}}</div>
-          <div> Jaki produkt</div>
+          <div> <mat-card>
+            <mat-card-content> {{element.status}} </mat-card-content>
+          </mat-card></div>
+          <div class="whichOrder" >{{getProducts(element) | json}}</div>
         </div>
-
       </td>
     </ng-container>
 
@@ -56,7 +57,7 @@
       <th mat-header-cell *matHeaderCellDef> Data </th>
       <td mat-cell *matCellDef="let element">
         <div style="font-size: 15px; font-weight: 450;"> {{element.date_created | slice:0:10}}</div>
-        <div class="header2" style="color: grey"> {{element.date_created | slice:12:16}}</div>
+        <div class="header2" style="color: grey">{{element.date_created | slice:11:16}}</div>
       </td>
     </ng-container>
 
@@ -64,8 +65,8 @@
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef> Cena </th>
       <td mat-cell *matCellDef="let element">
-        <div style="font-size: 15px; font-weight: 450;"> {{element.total}} {{element.currency}}</div>
-        <div class="header2"><u>Faktura nie wiem jaka</u></div>
+        <div style="font-size: 15px; font-weight: 450; text-align: center;"> {{element.total}} {{element.currency}}</div>
+        <div class="header2" style="text-align: center;"> <u>Faktura nie wiem jaka</u></div>
       </td>
     </ng-container>
 
@@ -74,8 +75,8 @@
       <th mat-header-cell *matHeaderCellDef> Klient </th>
       <td mat-cell *matCellDef="let element">
         <div class="header1">{{element.billing.first_name}} {{element.billing.last_name}} </div>
-        <div class="header2"> {{element.billing.email}}</div>
-        <div class="header2"> {{element.billing.phone}} </div>
+        <div class="header2" style="margin-bottom: 0;"> {{element.billing.email}}</div>
+        <div class="header2" style="margin-top: 0;"> {{element.billing.phone}} </div>
       </td>
     </ng-container>
 

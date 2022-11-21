@@ -65,12 +65,33 @@
   }
 
   .header1{
+    margin-top: 3%;
     font-weight: bold;
     font-size: medium;
   }
 
   .header2{
     color: gray;
-    font-size: small;
+    font-size: 14px;
+    margin: 1.5% 0;
   }
+
+  .mat-card{
+    width: 35%;
+    background-color: rgb(80, 158, 80);
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 500px !important;
+    padding: 5px 5px !important;
+    margin: 4% 0 0 4%;
+}
+
+.whichOrder{
+  margin: 6% 0 2% 4%;
+  color: rgb(80, 158, 80);
+  font-weight: bold;
+  font-size: medium ;
+}
 

@@ -12,7 +12,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrdersService } from './orders.service';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatPaginatorModule,
     MatTableModule,
     MatNativeDateModule,
+    MatChipsModule,
+    MatCardModule
 
 
 
