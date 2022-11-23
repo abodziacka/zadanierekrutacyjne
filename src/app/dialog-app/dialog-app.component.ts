@@ -14,7 +14,6 @@ export interface DialogData {id: number}
 export class DialogAppComponent implements OnInit {
 
   order: Orders;
-  shippingDetails: Array<Shipping>;
 
   constructor(
     public dialogRef: MatDialogRef<DialogAppComponent>,
@@ -28,7 +27,7 @@ export class DialogAppComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getProducts(this.data.id).subscribe(order=>{
       this.order=order;
-    console.log(order)});
+    });
 
   }
 

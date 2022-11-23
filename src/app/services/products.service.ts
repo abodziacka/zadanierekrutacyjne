@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Orders } from '../models';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {};
 
-  getProducts(id: number){
+  getProducts(id: number): Observable<Orders>{
     return this.http.get<Orders>(this.getProductsBeginURL+id.toString()+this.getProductsEndURL);
   }
 

@@ -36,7 +36,7 @@
   margin-top: 5%;
 }
 .dialogHeader{
-  text-align: center;
+  text-align: center ;
   font-family: 'Berkshire Swash', cursive;
   font-size: 40px;
   font-style: normal;
@@ -53,15 +53,16 @@
 }
 
 .dialogHeader2{
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 20px;
-  width: 30%;
+  width: 40%;
 }
 
 .details{
-  padding-left: 50px;
-  width: 70%;
-
+  padding-left: 60px;
+  width: 60%;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .row{

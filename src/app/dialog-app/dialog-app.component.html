@@ -14,17 +14,18 @@
     </tr>
     <tr class="row">
        <td class="dialogHeader2">Dane do dostawy</td><td class="details" *ngIf="order.shipping">  {{order.shipping.first_name}} {{order.shipping.last_name}} <br/>
-        {{order.shipping.address_1}} {{order.shipping.address_2}} <br/>
-        {{order.shipping.postcode}} {{order.shipping.city}} <br/>
-        {{order.shipping.phone}}
+        {{order.shipping.address_1}} {{order.shipping.address_2}} <span *ngIf="order.billing.address_1"> <br/></span>
+        {{order.shipping.postcode}} {{order.shipping.city}} <span *ngIf="order.billing.postcode"> <br/></span>
+        {{order.shipping.country}} <span *ngIf="order.billing.country"> <br/></span>
+        <span *ngIf="order.billing.phone"> tel.</span> {{order.shipping.phone}}
       </td>
     </tr>
     <tr class="row">
       <td class="dialogHeader2">Dane płatnika</td> <td class="details" *ngIf="order.billing">{{order.billing.first_name}} {{order.billing.last_name}} <br/>
         {{order.billing.address_1}} {{order.billing.address_2}} <br/>
         {{order.billing.postcode}} {{order.billing.city}} <br/>
-        {{order.billing.phone}} <br/>
-        {{order.billing.email}}
+        <span *ngIf="order.billing.phone"> tel.</span> {{order.billing.phone}} <br/>
+        <span *ngIf="order.billing.phone"> e-mail:</span> {{order.billing.email}}
       </td>
    </tr>
 
