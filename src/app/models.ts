@@ -4,13 +4,13 @@ export interface Orders {
   status: string;
   billing: Billing;
   date_created: Date;
-  line_items: Items[];
+  line_items: Product[];
   currency: string;
   total: number;
   shipping: Shipping;
   cart_tax: number;
 }
- export interface Items {
+ export interface Product {
   name: string;
   quantity: number;
  }

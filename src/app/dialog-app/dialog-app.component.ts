@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Orders, Shipping } from '../models';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../services/products.service';
 
 export interface DialogData {id: number}
 
@@ -13,8 +13,6 @@ export interface DialogData {id: number}
 })
 export class DialogAppComponent implements OnInit {
 
-  orders: any;
-  dataSource = new MatTableDataSource<any>();
   order: Orders;
   shippingDetails: Array<Shipping>;
 
@@ -30,12 +28,8 @@ export class DialogAppComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getProducts(this.data.id).subscribe(order=>{
       this.order=order;
-      console.log(order)});
+    console.log(order)});
 
-  }
-
-  getProducts(element: Orders){
-    return element?.line_items[0].name;
   }
 
 }

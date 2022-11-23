@@ -4,18 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OrdersService } from './orders.service';
+import { OrdersService } from './services/orders.service';
+import { ProductsService } from './services/products.service';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DialogAppComponent } from './dialog-app/dialog-app.component';
+import {DialogAppComponent} from './dialog-app/dialog-app.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { DialogAppComponent } from './dialog-app/dialog-app.component';
 
 
   ],
-  providers: [OrdersService],
+  providers: [OrdersService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

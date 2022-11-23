@@ -25,12 +25,12 @@
   </div>
 </div>
 
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+<div class="mat-elevation-z8" >
+  <table mat-table [dataSource]="dataSource" >
 
     <ng-container matColumnDef="order">
       <th mat-header-cell *matHeaderCellDef> Zamówienie </th>
-      <td mat-cell [width]="'12%'" *matCellDef="let element">
+      <td mat-cell [width]="'10%'" *matCellDef="let element">
         <div style="margin-top:3%">
           <div class="header1" style="cursor: pointer;" (click)="openDialog(element.id)">  #{{element.id}} </div>
           <div> <mat-card>
@@ -43,17 +43,17 @@
 
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Data </th>
-      <td mat-cell [width]="'5%'" *matCellDef="let element">
+      <td mat-cell [width]="'4%'" *matCellDef="let element">
         <div style="font-size: 15px; font-weight: 450;"> {{element.date_created | slice:0:10}}</div>
         <div class="header2" style="color: grey">{{element.date_created | slice:11:16}}</div>
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="price">
+    <ng-container matColumnDef="price" >
       <th mat-header-cell *matHeaderCellDef> Cena </th>
-      <td mat-cell [width]="'10%'" *matCellDef="let element">
+      <td mat-cell [width]="'6%'" *matCellDef="let element;" >
         <div style="font-size: 15px; font-weight: 450; text-align: center;"> {{element.total}} {{element.currency}}</div>
-        <div class="header2" style="text-align: center;"> <u>Faktura nie wiem jaka</u></div>
+        <div class="header2" style="text-align: center;"> <u>Faktura {{element.id}}/07/2022  </u></div>
       </td>
     </ng-container>
 
