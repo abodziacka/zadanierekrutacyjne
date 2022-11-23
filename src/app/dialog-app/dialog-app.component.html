@@ -1,5 +1,5 @@
 
- <h1 class="dialogHeader" >Szczegóły zamówienia #{{order?.id}}</h1>
+ <h1 class="dialogHeader" *ngIf="order">Szczegóły zamówienia #{{order.id}}</h1>
  <div class="border"></div>
  <div class="table1" *ngIf="order">
   <table>
