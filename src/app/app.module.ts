@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DialogAppComponent} from './dialog-app/dialog-app.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

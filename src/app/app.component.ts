@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
   title = 'zadanierekrutacyjne';
   orders: any;
   dataSource = new MatTableDataSource<Orders>();
-
   displayedColumns: string[] = ['order', 'date', 'price', 'customer'];
 
   constructor(private ordersService: OrdersService, public dialog: MatDialog) {}
@@ -40,7 +39,12 @@ export class AppComponent implements OnInit {
   }
 
   gerFirstProduct(element: Orders) {
-    return element.line_items[0].name + ' x ' + element.line_items[0].quantity + "...";
+    if (element.line_items[1] == null){
+      return element.line_items[0].name + ' x ' + element.line_items[0].quantity;
+    }
+    else{
+      return element.line_items[0].name + ' x ' + element.line_items[0].quantity + "...";
+    }
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
