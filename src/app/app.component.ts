@@ -22,10 +22,7 @@ export class AppComponent implements OnInit {
 
   displayedColumns: string[] = ['order', 'date', 'price', 'customer'];
 
-
   constructor(private ordersService: OrdersService, public dialog: MatDialog) {}
-
-
 
   ngOnInit(){
     this.getOrders();
